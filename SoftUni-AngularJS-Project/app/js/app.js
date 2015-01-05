@@ -1,0 +1,1 @@
+var softUniApp = angular.module('SoftUniModule', []);
