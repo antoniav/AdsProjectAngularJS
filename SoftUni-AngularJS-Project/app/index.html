@@ -1,33 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
 <head>
 	<title>AngularJS App</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-  <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
 	<link rel="stylesheet" type="text/css" href="css/app.css">
 </head>
 <body>
   
   <header id="app-header">
-    <div ng-include src="'templates/partial/header.html'"></div>
-  </header>
-	
-  <div id="app-content" class="row">
-    <div class="col-md-2 sidebar">
-      <div ng-include="'templates/partial/left-sidebar.html'">
-      </div>
-    </div>
-    <div class="col-md-8" ng-view>
-    </div>
-    <div class="col-md-2 sidebar">
-      <div ng-include="'templates/partial/right-sidebar.html'" ng-controller="RightSidebarController">
-      </div>
-    </div>
-  </div>
+    <div ng-include="'templates/partial/header.html'"></div>
+</header>
 
-  <footer id="app-footer">
+<div id='app-content'>
+    <div class='col-md-2 sidebar'>
+        <div ng-include="'templates/partial/left-sidebar.html'"></div>
+    </div>
+
+    <div class='col-md-8' ng-view>
+    </div>
+
+    <div class='col-md-2 sidebar' ng-controller="RightSideBarController">
+        <div ng-include="'templates/partial/right-sidebar.html'"></div>
+    </div>
+</div>
+
+<footer id="app-footer">
     &copy; 2014 by Software University Foundation, No Rights Reserved
-  </footer>
+</footer>
+
 
 
 <script type="text/javascript" src="lib/angular/angular.js"></script>

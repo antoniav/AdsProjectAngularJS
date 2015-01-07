@@ -1,11 +1,11 @@
 'use strict';
 
-var app = angular.module('app', ['ngRoute', 'ngResource']);
+var app = angular.module('app', ['ngRoute']);
 
 app.constant('baseServiceUrl', 'http://softuni-ads.azurewebsites.net');
 app.constant('pageSize', 2);
 
-app.config(function($routeProvider){
+app.config(['$routeProvider', function($routeProvider){
 	$routeProvider.when('/', {
 		templateUrl: 'templates/home.html',
 		controller: 'HomeController'
@@ -22,4 +22,4 @@ app.config(function($routeProvider){
 	});
 
 	$routeProvider.otherwise({redirectTo: '/'});
-});
+}]);
