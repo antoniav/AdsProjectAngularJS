@@ -1,6 +1,6 @@
 'use strict';
 
-app.factory('adsService', function($resource, baseServiceUrl) {
+app.factory('adsService', ['$resource', 'baseServiceUrl', function($resource, baseServiceUrl) {
 	var adsResource = $resource(
 			baseServiceUrl + '/api/ads', 
 			null, 
@@ -13,7 +13,7 @@ app.factory('adsService', function($resource, baseServiceUrl) {
 			return adsResource.getAll(params, success, error);
 		}
 	}
-});
+}]);
 
 app.factory('categoriesService', function($resource, baseServiceUrl) {
 	return {
@@ -21,8 +21,12 @@ app.factory('categoriesService', function($resource, baseServiceUrl) {
 	};
 });
 
-app.factory('townsService', function($resource, baseServiceUrl) {
+app.factory('townsService', ['$resource', 'baseServiceUrl', function($resource, baseServiceUrl) {
+	var townsResource = $resource(baseServiceUrl + 'towns');
+	function getAllTowns() {
+		return townsResource.query();
+	}
 	return {
-		//TODO: get all towns
+		getTowns: getAllTowns
 	};
-});
+}]);
