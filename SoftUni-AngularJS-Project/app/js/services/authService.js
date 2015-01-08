@@ -1,43 +1,45 @@
 'use strict';
+//authService from Lab changed! check to confirm working status!//
 
-app.factory('authService',
-    function ($http, baseServiceUrl) {
-        return {
-            login: function(userData, success, error) {
-                // TODO
-            },
+app.factory('authService', 
+    function () {
+        
+        var key = 'user';
 
-            register: function(userData, success, error) {
-                // TODO
-            },
-
-            logout: function() {
-                // TODO
-            },
-
-            getCurrentUser : function() {
-                // TODO
-            },
-
-            isAnonymous : function() {
-                // TODO
-            },
-
-            isLoggedIn : function() {
-                // TODO
-            },
-
-            isNormalUser : function() {
-                // TODO
-            },
-
-            isAdmin : function() {
-                // TODO
-            },
-            getAuthHeaders : function() {
-                // TODO
-            }
+        function saveUserData(data) {
+            localStorage.setItem(key, angular.toJson(data));
         }
-    }
-);
+
+        function getUserData() {
+            return angular.fromJson(localStorage.getItem(key));
+        }
+
+        function getHeaders(argument) {
+            var headers = {};
+            var userData = getUserData();
+            if (userData) {
+                headers.Authorization = 'Bearer ' + getUserData().access_token;
+            };
+
+            return headers;
+        }
+
+        function removeUser() {
+            localStorage.removeItem(key);
+        }
+
+        function isAdmin () {
+            var isAdmin = getUserData().isAdmin;
+            return isAdmin;
+
+        }
+
+        return {
+            saveUser: saveUserData,
+            getUser: getUserData,
+            getHeaders: getHeaders,
+            removeUser: removeUser,
+            isAdmin: isAdmin
+        }
+});
 

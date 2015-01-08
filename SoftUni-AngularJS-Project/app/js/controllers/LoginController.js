@@ -1,5 +1,8 @@
 'use strict';
 
-app.controller('LoginController', function($scope, $location, authService, notifyService) {
-	//TODO
-});
+app.controller('LoginController',['$scope', 'userService', 
+	function($scope, userService, authService, notifyService) {
+		$scope.login = function(user) {
+			userService.login(user);
+		}
+}]);

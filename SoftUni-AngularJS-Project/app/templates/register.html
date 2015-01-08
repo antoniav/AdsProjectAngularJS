@@ -3,44 +3,45 @@
 
 	<p>
 	    <label for="username">Username:</label>
-	    <input type="text" id="username" placeholder="Username" ng-model="userData.username" required />
+	    <input type="text" id="username" placeholder="Username" ng-model="user.username" required />
 	</p>
 
 	<p>
 		<label for="password">Password:</label>
-	    <input type="password" id="password" placeholder="Password" ng-model="userData.password" required />
+	    <input type="password" id="password" placeholder="Password" ng-model="user.password" required />
 	</p>
 
 	<p>
 		<label for="passwordConfirmation">Confirm Password:</label>
-	    <input type="password" id="passwordConfirmation" placeholder="Confirm Password" ng-model="userData.confirmPassword" required />
+	    <input type="password" id="passwordConfirmation" placeholder="Confirm Password" ng-model="user.confirmPassword" required />
 	</p>
 
 	<p>
 	    <label for="name">Name:</label>
-	    <input type="text" id="name" placeholder="Name" ng-model="userData.name" required />
+	    <input type="text" id="name" placeholder="Name" ng-model="user.name" required />
 	</p>
 
 	<p>
 	    <label for="email">Email:</label>
-	    <input type="text" id="email" placeholder="Email" ng-model="userData.email" required />
+	    <input type="text" id="email" placeholder="Email" ng-model="user.email" required />
 	</p>
 
 	<p>
 	    <label for="phone">Phone:</label>
-	    <input type="text" id="phone" placeholder="Phone" ng-model="userData.phone" required />
+	    <input type="text" id="phone" placeholder="Phone" ng-model="user.phone" required />
 	</p>
 
 	  <p>
 	      <label for="town">Town:</label>
-	      <select id="town" ng-model="userData.townId">
+	      <select id="town" ng-model="user.townId">
 	          <option value="null">(None)</option>
 	          <option ng-repeat="town in towns" 
 	              value="{{town.id}}">{{town.name}}</option>
 	      </select>
 	  </p>
 	  <p>
-	      <a ng-click="register(userData)" class="button">Register</a>
+	      <a ng-click="register(user)" class="button">Register</a>
 	      <a href="#/login" class="link">Login</a>
 	  <p>
 </div>
+<!--userData changed to user!-->
