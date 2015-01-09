@@ -23,6 +23,8 @@ app.config(['$routeProvider',
 			controller: 'RegisterController'
 		});
 
+		
+
 		$routeProvider.otherwise({redirectTo: '/'});
 
 }]);

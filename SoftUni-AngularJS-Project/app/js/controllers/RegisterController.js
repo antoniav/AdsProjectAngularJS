@@ -2,13 +2,13 @@
 
 app.controller('RegisterController', ['$scope', '$location', 'townsService', 'userService', 'authService', 'notifyService',
     function ($scope, $location, townsService, userService, authService, notifyService) {
+        $scope.pageTitle = 'Register';
         //$scope.userData = {townId: null};
 
         townsService.getTowns()
         	.$promise
         	.then(function(data) {
         		$scope.towns = data;
-                console.log(data);
         	});
 
         $scope.register = function(user) {
