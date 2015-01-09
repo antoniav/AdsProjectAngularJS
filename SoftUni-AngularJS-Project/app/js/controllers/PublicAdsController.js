@@ -3,6 +3,6 @@ app.controller('PublicAdsController', ['$scope', 'adsService',
  	adsService.getPublicAds()
  		.$promise
  		.then(function (data) {
- 			$scope.ads = data;
+ 			$scope.adsData = data;
  		})
 }]);

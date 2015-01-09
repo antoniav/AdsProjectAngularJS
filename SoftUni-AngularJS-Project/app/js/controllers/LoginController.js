@@ -1,9 +1,13 @@
 'use strict';
 
-app.controller('LoginController',['$scope', 'userService', 
-	function($scope, userService, authService, notifyService) {
+app.controller('LoginController',['$scope', '$location', 'userService', 
+	function($scope, $location, userService) {
 		$scope.pageTitle = 'Login';
 		$scope.login = function(user) {
-			userService.login(user);
+			userService.login(user)
+				.$promise
+				.then(function(data) {
+					$location.path('/');
+				});
 		}
 }]);
