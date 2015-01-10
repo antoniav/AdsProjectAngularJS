@@ -1,0 +1,9 @@
+<div id="categories" class="box ng-scope">
+	<h2>Categories</h2>
+	<ul class="sidebar-menu">
+      <li class="special">All</li>
+      <li ng-repeat="category in categories" ng-click="categoryClicked(category)">
+      	{{category.name}}
+      </li>
+  </ul>
+</div>

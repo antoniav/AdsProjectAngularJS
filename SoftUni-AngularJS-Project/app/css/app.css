@@ -177,4 +177,22 @@ ul.sidebar-menu li a, ul.sidebar-menu li a:focus {
 .ad-image {
     max-width: 150px;
     max-height: 150px;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.ad .content {
+    background-color: #C5E0B4;
+    color: #000;
+    border: 1px solid #649B3F;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.padding05 {
+    padding: 0.5rem;
+}
+
+.margin20 {
+    margin-top: 20px;
 }

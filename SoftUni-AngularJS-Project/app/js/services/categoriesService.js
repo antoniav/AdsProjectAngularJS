@@ -5,8 +5,9 @@ app.factory('categoriesService', ['$resource', 'baseServiceUrl',
 		var categoriesResource = $resource(baseServiceUrl + 'categories');
 
 		function getCategories(){
-        	return  categories.query();
+        	return  categoriesResource.query();
    		}
+    	
     	return {
         	getCategories: getCategories
     	}

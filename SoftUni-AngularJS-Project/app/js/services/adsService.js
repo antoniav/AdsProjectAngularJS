@@ -10,8 +10,8 @@ app.factory('adsService', ['$resource', 'baseServiceUrl',
 			}
 		)
 
-		function getPublicAds () {
-			return adsResource.get();
+		function getPublicAds (filterParams) {
+			return adsResource.get(filterParams);
 		}
 
 		function editAd (adId, ad) {

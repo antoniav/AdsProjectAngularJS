@@ -1,0 +1,9 @@
+<div id="towns" class="box ng-scope">
+	<h2>Towns</h2>
+	<ul class="sidebar-menu">
+      <li class="special">All</li>
+      <li ng-repeat="town in towns" ng-click="townClicked(town)">
+      	{{town.name}}
+      </li>
+  </ul>
+</div>
