@@ -25,20 +25,21 @@ app.factory('userService', ['$resource', 'baseServiceUrl', 'authService',
 				
 		}
 
-		function logoutUser() {
-			return $resource(baseServiceUrl + 'user/logout')
-				 .save(user)
-				.$promise
-				.then(function (data){
-					authService.removeUser();
+		// function logoutUser(user) {
+		// 	var resource = $resource(baseServiceUrl + 'user/logout')
+		// 		.save(user);
+		// 	resource.$promise
+		// 		.then(function (data){
+		// 			authService.removeUser();
+		// 		});
+		// 	return resource;
+				
 
-				});
-
-		}
+		// }
 
 		return {
 			register: registerUser,
-			login: loginUser,
-			logout: logoutUser
+			login: loginUser //,
+			// logout: logoutUser
 		}
  }])

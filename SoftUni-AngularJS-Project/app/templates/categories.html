@@ -1,11 +1,9 @@
 <div id="categories" class="box ng-scope">
 	<h2>Categories</h2>
 	<ul class="sidebar-menu">
-		<li class="special"
-            ng-class="{'selected' : selectedCategoryId == null}"
-            ng-click="categoryClicked(null)">
-            All
-        </li>
+         <li class="special">
+            <strong><a href="#/category/0" ng-class="{'pressButton' : selectedCategoryId == 0}">All</a></strong>
+         </li>
         <li ng-repeat="category in categories"
             ng-click="categoryClicked(category)"
             ng-class="{'selected' : selectedCategoryId == category}">

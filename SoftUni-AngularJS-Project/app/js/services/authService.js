@@ -25,8 +25,8 @@ app.factory('authService',
         }
 
         function removeUser() {
-           localStorage.removeItem(key);
-            // localStorage.clear();
+           // localStorage.removeItem(key);
+            localStorage.clear();
         }
 
         function isAdmin () {
@@ -36,10 +36,12 @@ app.factory('authService',
         }
 
         function isLoggedIn() {
-            return !!getUserData();
+            // localStorage.getItem(key) != undefined;
+           return !!getUserData();
         }
 
         function isAnonymous() {
+            // localStorage.getItem(key) == undefined;
             return !isLoggedIn();
         }
 
