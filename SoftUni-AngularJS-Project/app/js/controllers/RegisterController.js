@@ -1,9 +1,9 @@
 'use strict';
 
-app.controller('RegisterController', ['$scope', '$location', 'townsService', 'userService', 'authService', 'notifyService',
-    function ($scope, $location, townsService, userService, authService, notifyService) {
-        $scope.pageTitle = 'Register';
-        //$scope.userData = {townId: null};
+app.controller('RegisterController', ['$scope', '$rootScope', '$location', 'townsService', 'userService', 'notifyService',
+    function ($scope, $rootScope, $location, townsService, userService, notifyService) {
+        $rootScope.pageTitle = 'Register';
+        $scope.user = {townId: null};
 
         townsService.getTowns()
         	.$promise
@@ -12,16 +12,15 @@ app.controller('RegisterController', ['$scope', '$location', 'townsService', 'us
         	});
 
         $scope.register = function(user) {
-            userService.register(user);
-            //userData.register(user,
-            //    function success() {
-              //      // TODO: display success message
-                    // TODO: redirect to login screen
-                //},
-                //function error(err) {
-                  //  notifyService.showError("User registration failed", err);
-                //}
-            //);
+            userService.register(user)
+                .$promise
+                .then(function(data) {
+                    notifyService.showInfo('Registration successful');
+                    $location.path("/");
+                }, function(data) {
+                    notifyService.showError("Registration unsuccessful", data);
+                    $location.path("/register");
+                });
         };
     }
 ]);

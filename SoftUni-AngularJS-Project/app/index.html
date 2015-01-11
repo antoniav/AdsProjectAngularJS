@@ -14,7 +14,8 @@
 
 <div id='app-content'>
     <div class='col-md-2 sidebar'>
-        <div ng-include="'templates/partial/left-sidebar.html'"></div>
+        <div ng-include="'templates/left-public-sidebar.html'" ng-if="!isLoggedIn"></div>
+        <div ng-include="'templates/logged-in-sidebar.html'" ng-if="isLoggedIn"></div>
     </div>
 
     <div class='col-md-8' ng-view>
@@ -41,6 +42,7 @@
 <script type="text/javascript" src="js/app.js"></script>
 <script type="text/javascript" src="js/controllers/AppController.js"></script>
 <script type="text/javascript" src="js/controllers/HomeController.js"></script>
+<script type="text/javascript" src="js/controllers/HeaderController.js"></script>
 <script type="text/javascript" src="js/controllers/LoginController.js"></script>
 <script type="text/javascript" src="js/controllers/RegisterController.js"></script>
 <script type="text/javascript" src="js/controllers/TownsController.js"></script>

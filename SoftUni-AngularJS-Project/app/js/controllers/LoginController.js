@@ -1,8 +1,8 @@
 'use strict';
 
-app.controller('LoginController',['$scope', '$location', 'userService', 'notifyService', 
-	function($scope, $location, userService, notifyService) {
-		$scope.pageTitle = 'Login';
+app.controller('LoginController',['$scope', '$rootScope', '$location', 'userService', 'notifyService', 
+	function($scope, $rootScope, $location, userService, notifyService) {
+		$rootScope.pageTitle = 'Login';
 		$scope.login = function(user) {
 			userService.login(user)
 				.$promise
@@ -16,14 +16,3 @@ app.controller('LoginController',['$scope', '$location', 'userService', 'notifyS
 		};
 	}
 ]);
-
-		//$scope.login = function(user) {
-        //    userService.login(user,
-       //         function success(data) {
-        //            $location.path("/");
-        //        },
-        //        function error(err) {
-        //        	notifyService.showError("Invalid login", err);
-        //        	$location.path("/login");
-        //        }
-        //    );

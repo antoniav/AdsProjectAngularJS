@@ -1,5 +1,5 @@
 'use strict';
-//authService from Lab changed! check to confirm working status!//
+
 
 app.factory('authService', 
     function () {
@@ -34,12 +34,17 @@ app.factory('authService',
 
         }
 
+        function isLoggedIn() {
+            return !!getUserData();
+        }
+
         return {
             saveUser: saveUserData,
             getUser: getUserData,
             getHeaders: getHeaders,
             removeUser: removeUser,
-            isAdmin: isAdmin
+            isAdmin: isAdmin,
+            isLoggedIn: isLoggedIn
         }
 });
 

@@ -9,6 +9,7 @@ app.controller('TownsController',['$scope', '$rootScope', 'townsService', 'filte
         	});
 
         $scope.townClicked = function townClicked(town) {
+            $scope.selectedTownId = town.id;
         	filter.filterByTown(town);
         	$rootScope.$broadcast('townClicked', town);
         }

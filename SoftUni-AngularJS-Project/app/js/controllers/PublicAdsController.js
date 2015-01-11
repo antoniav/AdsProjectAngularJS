@@ -7,7 +7,10 @@ app.controller('PublicAdsController', ['$scope', 'adsService', 'filter',
  			.$promise
  			.then(function (data) {
  				$scope.adsData = data;
- 			});
+ 			}
+ 			, function(data) {
+            	notifyService.showError("Cannot load ads", data);
+			});
  	}
 
  	loadPublicAds();

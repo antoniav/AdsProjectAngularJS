@@ -1,3 +1,17 @@
-<h1>Ads Application</h1>
+<!--<h1>Ads Application</h1>-->
 
+<!-- <header>
+    Ads Application - {{pageTitle}}
+    <div ng-if="user" class="user-area">
+        <span>{{user.username}}</span>
+        <a href="#/ads" ng-click="logout()" class="link">Logout</a>
+    </div>
+</header>
+ -->
 
+Ads<span ng-if="pageTitle"> &ndash; {{pageTitle}}</span>
+
+<div ng-if="authService.isLoggedIn()" class="user-area">
+  <span>{{authService.getUserData().username}}</span>
+  <a ng-click="logout()" class="link">Logout</a>
+</div>
