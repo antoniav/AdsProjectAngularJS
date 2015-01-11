@@ -14,8 +14,7 @@
 
 <div id='app-content'>
     <div class='col-md-2 sidebar'>
-        <div ng-include="'templates/left-public-sidebar.html'" ng-if="!isLoggedIn"></div>
-        <div ng-include="'templates/logged-in-sidebar.html'" ng-if="isLoggedIn"></div>
+        <div ng-include="'templates/partial/left-sidebar.html'"></div>
     </div>
 
     <div class='col-md-8' ng-view>
@@ -31,7 +30,7 @@
 </footer>
 
 
-
+<!-- libraries -->
 <script type="text/javascript" src="lib/angular/angular.js"></script>
 <script type="text/javascript" src="lib/angular/angular-route.js"></script>
 <script type="text/javascript" src="lib/angular/angular-resource.js"></script>
@@ -39,7 +38,9 @@
 <script type="text/javascript" src="lib/jQuery/jquery-2.1.3.js"></script>
 <script type="text/javascript" src="lib/jQuery.noty/jquery.noty.js"></script>
 <script type="text/javascript" src="lib/bootstrap/bootstrap-3.1.1.js"></script>
+<!-- scripts -->
 <script type="text/javascript" src="js/app.js"></script>
+<!--    controllers -->
 <script type="text/javascript" src="js/controllers/AppController.js"></script>
 <script type="text/javascript" src="js/controllers/HomeController.js"></script>
 <script type="text/javascript" src="js/controllers/HeaderController.js"></script>
@@ -48,9 +49,11 @@
 <script type="text/javascript" src="js/controllers/TownsController.js"></script>
 <script type="text/javascript" src="js/controllers/CategoriesController.js"></script>
 <script type="text/javascript" src="js/controllers/PublicAdsController.js"></script>
+<!--    directives -->
 <script type="text/javascript" src="js/directives/public-ads.js"></script>
 <script type="text/javascript" src="js/directives/categories.js"></script>
 <script type="text/javascript" src="js/directives/towns.js"></script>
+<!--    services -->
 <script type="text/javascript" src="js/services/adsService.js"></script>
 <script type="text/javascript" src="js/services/townsService.js"></script>
 <script type="text/javascript" src="js/services/categoriesService.js"></script>

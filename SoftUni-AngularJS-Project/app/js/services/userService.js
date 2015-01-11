@@ -27,10 +27,11 @@ app.factory('userService', ['$resource', 'baseServiceUrl', 'authService',
 
 		function logoutUser() {
 			return $resource(baseServiceUrl + 'user/logout')
-				.save(user)
+				 .save(user)
 				.$promise
 				.then(function (data){
 					authService.removeUser();
+
 				});
 
 		}
