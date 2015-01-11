@@ -23,6 +23,11 @@ app.config(['$routeProvider',
 			controller: 'RegisterController'
 		});
 
+		$routeProvider.when('/logout', {
+        templateUrl: 'templates/home.html',
+        controller: 'LogoutController'
+    });
+
 		
 
 		$routeProvider.otherwise({redirectTo: '/'});

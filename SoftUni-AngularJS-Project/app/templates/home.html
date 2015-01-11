@@ -1,3 +1,53 @@
-<div id="wrapper">
+<!-- <div id="wrapper">
     <public-ads></public-ads>
+</div>
+ -->
+
+ <div id="public-ads" class="ad padding">
+	<ul class="ads">
+		<li class="box ng-scope" ng-repeat="ad in adsData.ads">
+			<div>
+				<div class="row">
+					<div class="col-md-7">
+						<h1 class="pull-left">{{ad.title}}</h1>
+					</div>
+					<div class="col-md-5">
+						<div class="pull-right"><strong>Date:</strong> {{ad.date | date:'dd-MMM-yyyy'}}</div>
+					</div>
+				</div>
+
+				<div class="row" ng-if='ad.imageDataUrl'>
+					<div class=col-md-4>
+						<img ng-src="{{ad.imageDataUrl}}" class="ad-image">
+					</div>
+
+					<div class=col-md-8>
+						<section>
+				            <div class="content padding05">
+				                {{ad.text}}
+				            </div>
+				            <div class="margin20">
+				                <span class="padding05">Name </span><span class="content padding05">{{ad.ownerName}}</span>
+				            </div>
+				            <div class="margin20">
+				                <span class="padding05">Email </span><span class="content padding05"><a href="mailto:{{ad.ownerEmail}}">{{ad.ownerEmail}}</a></span>
+				            </div>
+				            <div class="margin20">
+				                <span class="padding05">Tel. </span><span class="content padding05">{{ad.ownerPhone}}</span>
+				            </div>
+			        	</section>
+					</div>
+				</div>
+
+				<div ng-if="ads.ads.length==0" class="box no-data">
+	    			No ads found.
+				</div>
+				
+			</div>
+
+			
+<!-- TODO: paginatio -->
+
+		</li>
+	</ul>
 </div>
